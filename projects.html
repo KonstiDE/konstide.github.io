@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projects – Konstantin Müller</title>
+
+    <link rel="stylesheet" href="projects.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;600&display=swap" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <h1>My Projects</h1>
+      <a href="index.html" class="back-link">← Back to Home</a>
+    </header>
+
+    <main class="projects-grid">
+      <!-- Project Card -->
+      <div class="project-card">
+        <img src="umas.png" alt="UMAS" />
+        <div class="project-info">
+          <h2>UAV Management Application Software</h2>
+          <p>A standalone software to manage, store, and handle UAV field data including an Agisoft Metashape integration to automatically process data with predefined workflows.</p>
+          <a href="https://github.com/konstide/UMAS" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+
+          <div class="tags">
+            <span class="tag"><img src="icons/java.png" alt="JavaFX" /> JavaFX</span>
+            <span class="tag"><img src="icons/python.png" alt="R" /> Python</span>
+            <span class="tag"><img src="icons/metashape.png" alt="Metashape" /> Metashape</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="img-replacement">
+          <span style="
+            color: whitesmoke;
+            font-size: xxx-large;
+            font-weight: bold;
+            margin-left: 8px;
+          ">RStoolbox</span>
+          <hr style="margin-left: 8px; margin-right: 8px;" />
+          <div style="height: 8px"></div>
+
+          <div class="badges" style="margin-left: 8px">
+            <img src="https://img.shields.io/github/actions/workflow/status/bleutner/RStoolbox/rcmdcheck.yaml?branch=master" alt="CI" class="badge-img">
+            <object type="image/svg+xml" data="https://www.r-pkg.org/badges/version/RStoolbox" aria-label="CRAN"></object>
+            <img src="https://codecov.io/gh/bleutner/RStoolbox/branch/master/graph/badge.svg" alt="Codecov" class="badge-img">
+            <object type="image/svg+xml" data="https://cranlogs.r-pkg.org/badges/grand-total/RStoolbox" aria-label="Downloads"></object>
+            <object type="image/svg+xml" data="https://img.shields.io/stackexchange/stackoverflow/t/RStoolbox?logo=stackoverflow&label=Questions" aria-label="Stack"></object>
+          </div>
+
+        </div>
+
+        <div class="project-info">
+          <h2>Remote Sensing Toolbox</h2>
+          <p>Toolbox for remote sensing image processing and analysis such as calculating spectral indexes, principal component transformation, unsupervised and supervised classification or fractional cover analyses.</p>
+
+          <h3>Resulted Publications</h3>
+          <ul>
+            <li><a href="https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.14451">RStoolbox: An R package for Remote Sensing Data Analysis.</a></li>
+          </ul>
+
+          <a href="https://github.com/bleutner/RStoolbox" target="_blank" class="github-link">
+            <i class="fab fa-github"></i> View on GitHub
+          </a>
+          <a href="https://cran.r-project.org/web/packages/RStoolbox/index.html" target="_blank" class="github-link">
+            <i class="fa-solid fa-registered"></i> View on CRAN
+          </a>
+
+          <div class="tags">
+            <span class="tag"><img src="icons/r.png" alt="R" /> R</span>
+            <span class="tag"><img src="icons/cpp.png" alt="C++" /> C++</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="project-card">
+        <img src="ukw.svg" alt="Wunderkint" />
+        <div class="project-info">
+          <h2>Wunderkint</h2>
+          <p>The Wunderkint project (later: WoundAmbit) aims to support medical staff and patients by tracking the
+            status of chronic wounds with mobile devices. Automatically, wounds will be evaluated concerning the
+            intensity of redness, itchiness, etc.</p>
+
+          <h3>Resulted Publications</h3>
+          <ul>
+            <li><a href="https://arxiv.org/abs/2506.06104">WoundAIssist: A Patient-Centered Mobile App for AI-Assisted Wound Care With Physicians in the Loop.</a></li>
+            <br>
+            <li><a href="https://link.springer.com/chapter/10.1007/978-3-031-70893-0_21">Early Explorations of Lightweight Models for Wound Segmentation on Mobile Devices.</a></li>
+          </ul>
+
+          <div class="tags">
+            <span class="tag"><img src="icons/android.png" alt="Android" /> Android</span>
+            <span class="tag"><img src="icons/kotlin.png" alt="Kotlin" /> Kotlin</span>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>

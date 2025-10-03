@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Publications – Konstantin Müller</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="publications.css" />
+
+  <!-- Load BibTeX parser -->
+  <script src="https://cdn.jsdelivr.net/npm/@orcid/bibtex-parse-js@0.0.25/bibtexParse.js"></script>
+
+    <script>
+    async function loadPublications(bib_file, into) {
+      try {
+        // load publications.bib from the same folder
+        const response = await fetch(bib_file);
+        const bibText = await response.text();
+
+        // parse BibTeX into JSON
+        const entries = bibtexParse.toJSON(bibText);
+
+        const container = document.getElementById(into);
+        container.innerHTML = "";
+
+        entries.forEach(entry => {
+          const fields = entry.entryTags;
+
+          // create a publication card
+          const div = document.createElement("div");
+          div.className = "publication";
+
+          div.innerHTML = `
+            <h2>${fields.title || "Untitled"}</h2>
+            <p class="authors">${fields.author || ""}</p>
+            <p class="journal"><em>${fields.journal || fields.booktitle || ""}</em>, ${fields.year || ""}</p>
+            <p class="links">
+              ${fields.url ? `<a href="${fields.url}" target="_blank">Link</a>` : ""}
+              ${fields.doi ? ` · <a href="https://doi.org/${fields.doi}" target="_blank">DOI</a>` : ""}
+            </p>
+          `;
+
+          container.appendChild(div);
+        });
+      } catch (err) {
+        console.error("Failed to load publications:", err);
+      }
+    }
+  </script>
+
+</head>
+<body>
+  <header>
+    <h1>All publications</h1>
+    <a href="index.html" class="back-link">← Back to Home</a>
+  </header>
+
+  <h1>Remote Sensing</h1>
+  <script>
+    loadPublications("bibs/remote-sensing.bib", "pub-list")
+  </script>
+
+  <main class="pub-list" id="pub-list">
+    <!-- Publications will be injected here -->
+  </main>
+
+
+  <h1>Computer Science</h1>
+  <script>
+    loadPublications("bibs/computer-science.bib", "pub-list-2")
+  </script>
+
+  <main class="pub-list" id="pub-list-2">
+    <!-- Publications will be injected here -->
+  </main>
+
+  <h1>Bio-chemistry</h1>
+  <script>
+    loadPublications("bibs/bio-chemistry.bib", "pub-list-3")
+  </script>
+
+  <main class="pub-list" id="pub-list-3">
+    <!-- Publications will be injected here -->
+  </main>
+
+</body>
+</html>
